@@ -13,6 +13,8 @@ export const TodoModal: React.FC<Props> = ({ todo, onClose }) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
+    setUser(null);
+
     getUser(todo.userId).then(userFromServer => {
       setUser(userFromServer);
     });
